@@ -23,8 +23,8 @@
 (setq ido-auto-merge-work-directories-length -1)
 
 ;;;; swap ctrl and meta
-(setq x-ctrl-keysym 'meta)
-(setq x-meta-keysym 'ctrl)
+;; (setq x-ctrl-keysym 'meta)
+;; (setq x-meta-keysym 'ctrl)
 
 ;;;; org-mode
 (global-set-key "\C-cl" 'org-store-link)
