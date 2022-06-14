@@ -45,6 +45,9 @@
 ;; emacs
 (load-theme 'adwaita t)
 
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-<backspace>") 'kill-region)
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq make-backup-files nil)
@@ -62,9 +65,9 @@
 
 (setq-default fill-column 80)
 (setq-default cursor-type 'bar)
-(setq-default tab-width 4)
-(setq-default c-basic-offset 4)
-(setq-default indent-tabs-mode nil)
+(setq-default tab-width 8)
+(setq-default c-basic-offset 8)
+(setq-default indent-tabs-mode t)
 
 (global-display-line-numbers-mode 1)
 (show-paren-mode 1)
