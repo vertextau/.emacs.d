@@ -42,14 +42,25 @@
   'glyphless-char-display-control
   '((format-control . empty-box) (no-font . hex-code)))
 
+;; auctex
+(defun my-LaTeX-autoload ()
+  (auto-fill-mode)
+  (flyspell-mode))
+
+(defun save-at-point ()
+  (interactive)
+  (kill-new (current-word) nil))
+
 ;; emacs
 (load-theme 'adwaita t)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-<backspace>") 'kill-region)
+(global-set-key (kbd "C-c w") 'save-at-point)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(global-font-lock-mode 0)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq inhibit-startup-screen t)
@@ -69,10 +80,11 @@
 (setq-default c-basic-offset 8)
 (setq-default indent-tabs-mode t)
 
+
 (global-display-line-numbers-mode 1)
 (show-paren-mode 1)
 (electric-pair-mode 1)
-(global-whitespace-mode 1)
+;(global-whitespace-mode 1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -82,11 +94,6 @@
 ;; c and cpp
 (eval-after-load 'cc-mode
   '(define-key c-mode-base-map (kbd "C-c o") 'ff-find-other-file))
-
-;; auctex
-(defun my-LaTeX-autoload ()
-  (auto-fill-mode)
-  (flyspell-mode))
 
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-autoload)
 (setq font-latex-fontify-script nil)
@@ -99,7 +106,8 @@
 ;;(setq slime-contribs '(slime-fancy))
 
 (custom-set-faces
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#FFFFFF" :foreground "#2E3436" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "JB" :family "JetBrains Mono NL"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "GOOG" :family "Noto Sans Mono"))))
+ '(cursor ((t (:background "blue"))))
  '(font-lock-comment-face ((t (:foreground "dark gray"))))
  '(whitespace-empty ((t (:background "gray91" :foreground "firebrick"))))
  '(whitespace-indentation ((t (:foreground "gainsboro"))))
